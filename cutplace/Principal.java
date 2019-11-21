@@ -18,7 +18,20 @@ public class Principal extends JPanel implements ActionListener { //estamos exte
 		this.mainFrame=mainFrame;
 		us=e; //aqui estamos igualando nuestro "Usuario" con el usuario recibido 
 		
-		boton= new JButton("<html>"+"Nombre: "+us.getNombre()+"<br>"+"Producto: "+us.getProducto()+"</html>");//Estamos sacando el valor "nombre" y el correo de la variable "us"	HTML PARA EL ACOMODO DE LOS GET	
+		//boton= new JButton("<html>"+"Nombre: "+us.getNombre()+"<br>"+"Producto: "+us.getProducto()+"</html>");//Estamos sacando el valor "nombre" y el correo de la variable "us"	HTML PARA EL ACOMODO DE LOS GET	
+		String content = "Nombre: " + String.valueOf(us.getNombre());
+		content = content + "   Producto: " + String.valueOf(us.getProducto());
+		JLabel area = new JLabel();
+		JLabel test1 = new JLabel();
+		area.setText(content);
+		
+		String Icon = "C:\\Users\\Gustavo Quintero\\Documents\\GitHub\\cutplace\\img\\left.png";
+		ImageIcon test = new ImageIcon(Icon);
+		test1.setIcon(test);
+		
+		boton= new JButton();
+		boton.setLayout(new BorderLayout());
+		boton.setPreferredSize(new Dimension(300 ,55));
 		boton.setIcon(null);/*CHECAR ESTO*/
 		boton.setBorderPainted( false );
 		boton.setBackground(new Color(204,222,145));
@@ -26,6 +39,8 @@ public class Principal extends JPanel implements ActionListener { //estamos exte
 		boton.setBorderPainted( false );
 		boton.setBackground(new Color(185,209,99));
 		
+		boton.add(area,BorderLayout.CENTER);
+		boton.add(test1,BorderLayout.WEST);
 		boton.addActionListener(this);
 		add(boton);
 		return this;

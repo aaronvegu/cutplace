@@ -30,7 +30,7 @@ public class Soporte implements ActionListener {
 		layout3 = new JPanel();
 		back = new JButton("Volver");
 		//em = new JLabel("prueba");
-		titulo = new JLabel("Â¿Algun Problema con la Aplicacion?");
+		titulo = new JLabel("¿Algun Problema con la Aplicacion?");
 		desc = new JLabel("Envianos un mensaje para ayudarte :)");
 		ta = new JTextArea("Describe el problema o mensaje");
 		nombre = new JTextField("Ingresa tu nombre"); 
