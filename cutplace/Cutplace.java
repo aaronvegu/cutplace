@@ -26,11 +26,11 @@ public class Cutplace  implements ActionListener {
 	  this.mainFrame=mainFrame;
 	
     ingreso=new JFrame("INGRESO A VENDEDORES");//el frame sera nuestra ventana que alojara todos los componentes que 
-    vendedor=new JLabel("¿Eres vendedor?\n ");
+    vendedor=new JLabel("ï¿½Eres vendedor?\n ");
     iniciar=new JLabel("    Iniciar sesion");
     us =new JTextField("Codigo de Alumno");
     paraP=new JLabel(" ");
-    aviso= new JLabel("¿No tienes cuenta?");
+    aviso= new JLabel("ï¿½No tienes cuenta?");
     
    
     ok=new JButton("Ingresar");
@@ -45,12 +45,12 @@ public class Cutplace  implements ActionListener {
     atras.addActionListener(this);
     crear.addActionListener(this);
     
-    join= new JPasswordField("Conseña");
+    join= new JPasswordField("Conseï¿½a");
     
-    panelp=new JPanelBackground("C:\\Users\\slowe\\eclipse-workspace\\cutplace\\bin\\cutplace\\fcec1f167e1a454be1024b8e57928ace.jpg");
+    panelp=new JPanelBackground("");
     panel1=new JPanel();
     panel2=new JPanel();
-    paneln= new JPanelBackground("C:\\Users\\slowe\\eclipse-workspace\\cutplace\\bin\\cutplace\\orig_508096.jpg");
+    paneln= new JPanelBackground("");
     
     paraP.setFont(new Font("", Font.BOLD,70));
     iniciar.setFont(new Font("", Font.ITALIC,15));
@@ -91,7 +91,7 @@ public class Cutplace  implements ActionListener {
 	  contrasena=join.getText();
 	  user=us.getText();
 	  
-	  System.out.println("la contraseña digitada es: "+contrasena);
+	  System.out.println("la contraseï¿½a digitada es: "+contrasena);
 	
       
 	  
@@ -118,7 +118,7 @@ public class Cutplace  implements ActionListener {
 				  
 				  FrameSell objSell= new FrameSell(use);
 			  }
-			  else { JOptionPane.showMessageDialog(ingreso, "Usuario o contraseña incorrecta", "ERROR AL INGRESO", JOptionPane.INFORMATION_MESSAGE);
+			  else { JOptionPane.showMessageDialog(ingreso, "Usuario o contraseï¿½a incorrecta", "ERROR AL INGRESO", JOptionPane.INFORMATION_MESSAGE);
 			  }
 			  
 			  conexion.closeConnection();
