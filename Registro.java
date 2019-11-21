@@ -60,7 +60,7 @@ public class Registro implements ActionListener, EventListener, KeyListener {
    space0 = new Label("");
    space1 = new Label(" Codigo de Alumno ");
    space2 = new Label(" Correo electronico ");
-   space3 = new Label(" Contrasena ");
+   space3 = new Label(" Contraseña ");
    space4 = new Label("");
    go = new JButton ("OK");
    go.addActionListener(this);

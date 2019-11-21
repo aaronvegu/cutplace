@@ -9,6 +9,7 @@ import java.awt.event.*;
 public class Cutplace  implements ActionListener {
   
   private JFrame ingreso;  //presentacion de las variables (globales para que asi pueda utilizar mi constructor.
+  private JFrame mainFrame;
   private JLabel vendedor, iniciar, aviso, paraP;
   private JPanelBackground panelp,paneln;
   private JPanel panel1,panel2;
@@ -18,9 +19,11 @@ public class Cutplace  implements ActionListener {
   
   private String contrasena;
   private String user;
+  private Usuario use;
   
   
-  public Cutplace() {
+  public Cutplace(JFrame mainFrame) {
+	  this.mainFrame=mainFrame;
 	
     ingreso=new JFrame("INGRESO A VENDEDORES");//el frame sera nuestra ventana que alojara todos los componentes que 
     vendedor=new JLabel("¿Eres vendedor?\n ");
@@ -98,18 +101,22 @@ public class Cutplace  implements ActionListener {
 	  
 	  else if (eve.getSource().equals(atras)) {
 		 ingreso.dispose();
+		 main objMain= new main();
 	 }
 	  else if (eve.getSource().equals(ok)) {
 		  DataBase conexion= new DataBase();
 		  
 		  if(conexion.openConnection()) {
 			 
-			  if(conexion.loginUser(user,contrasena)) {
+			  if((use=conexion.loginUser(user,contrasena))!=null) {
+				  
+				  System.out.print(use.getNombre());
 				  
 				  JOptionPane.showMessageDialog(ingreso, "Si inicio sesion correctamente, Bienvenido",user, 3);
-				  ingreso.dispose();
 				  
-				  Registro prueba= new Registro();
+				  //ingreso.dispose();
+				  
+				  FrameSell objSell= new FrameSell(use);
 			  }
 			  else { JOptionPane.showMessageDialog(ingreso, "Usuario o contraseña incorrecta", "ERROR AL INGRESO", JOptionPane.INFORMATION_MESSAGE);
 			  }
@@ -120,9 +127,6 @@ public class Cutplace  implements ActionListener {
 	  }
  }
   
-  
- public static void main (String ourArgs[]) {
-  Cutplace obj=new Cutplace();
-}
+
 
 }
