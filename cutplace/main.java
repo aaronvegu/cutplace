@@ -67,10 +67,11 @@ public class main implements ActionListener
 		label3.setIcon(icon5);
 
 		
-		newLab3.setLayout(new GridLayout(6,1));
+		newLab3.setLayout(new GridLayout(10,1));
 		
 		
 		Principal obj= new Principal();
+		obj.setLayout(new GridLayout(8,1));
 		mainFrame = new JFrame("Main");
 		obj.addJFrameUser(newLab3,mainFrame);
 		
@@ -163,6 +164,12 @@ public class main implements ActionListener
 			panup.repaint();
 			System.out.println("Done");
 		}
+        else if(e.getActionCommand()=="Soporte")
+        {
+        	mainFrame.setVisible(false);
+        	Soporte ventanaAraon = new Soporte();
+        	
+        }
 
 	}
 	

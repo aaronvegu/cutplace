@@ -25,7 +25,7 @@ public class Principal extends JPanel implements ActionListener { //estamos exte
         boton.setLayout(new BorderLayout());
 		boton.setBorderPainted( false );
 		boton.setBackground(new Color(185,209,99));
-		boton.setSize(new Dimension(280,100));
+		
 		boton.addActionListener(this);
 		add(boton);
 		return this;

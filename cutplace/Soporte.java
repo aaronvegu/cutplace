@@ -1,3 +1,4 @@
+package cutplace;
 
 import javax.swing.*;
 import javax.swing.filechooser.*;
