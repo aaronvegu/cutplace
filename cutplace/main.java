@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
-public class main implements ActionListener
+public class main implements ActionListener 
 {
 	JFrame mainFrame,secondFrame,thirdFrame;
 	JButton b[],b2,b3[],next,back,backahora;
@@ -16,6 +16,7 @@ public class main implements ActionListener
 	ImageIcon taquitos,taquitos1;
 	String comida1,comida2;
 	JTextArea first,second[];
+	
 
 
 
@@ -30,7 +31,7 @@ public class main implements ActionListener
 		 
 		first = new JTextArea("Saluditos");
 			
-		String image = "D:/resources/images/logo1.png";
+		String image = ".\\\\img\\\\cutplace_480x280.png";
 		ImageIcon icon = new ImageIcon(image); 
 		JLabel label = new JLabel();
 		label.setIcon(icon);
@@ -50,6 +51,8 @@ public class main implements ActionListener
 		{
 			b[i] = new JButton(newString[i]);
 			b[i].addActionListener(this);
+			b[i].setBorderPainted(false);
+			b[i].setBackground(new Color(204,222,145));
 			if(i == 0)
 				newLab.add(b[i]);
 			else
@@ -57,7 +60,10 @@ public class main implements ActionListener
 				newLab2.add(b[i]);
 			}
 		}
-			
+		
+		
+		
+		
 		String image4 = "D:\\Resources\\Images\\left.png";
 		ImageIcon icon4 = new ImageIcon(image4); 
 		/*label2.setIcon(icon4);*/
@@ -88,36 +94,7 @@ public class main implements ActionListener
 		mainFrame.setVisible(true);
 		
 		//Segundo frame customer view aqui
-		back = new JButton("<");
-		back.setSize(28,60);
-		back.addActionListener(this);
-		back.setBorderPainted(false);
-		back.setBackground(new Color(185,209,99));
-		
-		next = new JButton(">");
-		next.setSize(28,60);
-		next.addActionListener(this);
-		next.setBorderPainted(false);
-		next.setBackground(new Color(185,209,99));
-		
-		lab = new JLabel[2];
-		label4 = new JLabel();
-		label5 = new JLabel();
-		
 
-		String comida1 = "D:\\Resources\\Images\\test2.png";	
-		ImageIcon taquitos = new ImageIcon(comida1); 
-		label4.setIcon(taquitos);
-		
-		String comida2 = "D:\\Resources\\Images\\test3.png";
-		ImageIcon taquitos1 = new ImageIcon(comida2); 
-		label5.setIcon(taquitos1);
-		
-		label4.add(next);
-		
-		menu = new JPanel();
-		menu.add(back);
-		menu.add(next);
 		
 		
 		//Text that must be modified by database Qrys		
@@ -143,28 +120,7 @@ public class main implements ActionListener
 			Cutplace obj=new Cutplace(mainFrame);
 			mainFrame.dispose();
 		}
-		
-		else if(e.getActionCommand()== ">")
-		{
-			panup.remove(menu);
-			panup.remove(label4);
-			panup.add(label5);
-			panup.add(menu);
-			panup.revalidate();
-			panup.repaint();
-			System.out.println("Done");
-		}
-        else if(e.getActionCommand()=="<")
-		{
-			panup.remove(menu);
-			panup.remove(label5);
-			panup.add(label4);
-			panup.add(menu);
-			panup.revalidate();
-			panup.repaint();
-			System.out.println("Done");
-		}
-        else if(e.getActionCommand()=="Soporte")
+		else if(e.getActionCommand()=="Soporte")
         {
         	mainFrame.setVisible(false);
         	Soporte ventanaAraon = new Soporte();

@@ -20,12 +20,12 @@ public class Principal extends JPanel implements ActionListener { //estamos exte
 		
 		//boton= new JButton("<html>"+"Nombre: "+us.getNombre()+"<br>"+"Producto: "+us.getProducto()+"</html>");//Estamos sacando el valor "nombre" y el correo de la variable "us"	HTML PARA EL ACOMODO DE LOS GET	
 		String content = "Nombre: " + String.valueOf(us.getNombre());
-		content = content + "   Producto: " + String.valueOf(us.getProducto());
+		content = content + "\nProducto: " + String.valueOf(us.getProducto());
 		JLabel area = new JLabel();
 		JLabel test1 = new JLabel();
 		area.setText(content);
 		
-		String Icon = "C:\\Users\\Gustavo Quintero\\Documents\\GitHub\\cutplace\\img\\left.png";
+		String Icon = ".\\img\\left.png";
 		ImageIcon test = new ImageIcon(Icon);
 		test1.setIcon(test);
 		
