@@ -47,10 +47,10 @@ public class Cutplace  implements ActionListener {
     
     join= new JPasswordField("Conseña");
     
-    panelp=new JPanelBackground("C:\\Users\\slowe\\eclipse-workspace\\cutplace\\bin\\cutplace\\fcec1f167e1a454be1024b8e57928ace.jpg");
+    panelp=new JPanelBackground(".\\\\img\\\\fcec1f167e1a454be1024b8e57928ace.jpg");
     panel1=new JPanel();
     panel2=new JPanel();
-    paneln= new JPanelBackground("C:\\Users\\slowe\\eclipse-workspace\\cutplace\\bin\\cutplace\\orig_508096.jpg");
+    paneln= new JPanelBackground(".\\\\img\\\\orig_508096.jpg");
     
     paraP.setFont(new Font("", Font.BOLD,70));
     iniciar.setFont(new Font("", Font.ITALIC,15));
