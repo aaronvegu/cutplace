@@ -29,6 +29,7 @@ public class Registro implements ActionListener, EventListener, KeyListener {
   private Label space3;
   private Label space4;
   private JButton go;
+  private JButton atras;
   
   private String correoT;
   private String codigoT;
@@ -64,6 +65,8 @@ public class Registro implements ActionListener, EventListener, KeyListener {
    space4 = new Label("");
    go = new JButton ("OK");
    go.addActionListener(this);
+   atras= new JButton("Cancelar");
+   atras.addActionListener(this);
    
 
 
@@ -85,6 +88,7 @@ public class Registro implements ActionListener, EventListener, KeyListener {
    box1.add(pass);
    box1.add(space4);
    box1.add(go);
+   box1.add(atras);
 
    windP.add(boxP);
 
@@ -98,6 +102,7 @@ public class Registro implements ActionListener, EventListener, KeyListener {
    mail.setFont(new Font("Dialog",Font.BOLD, 15));
    pass.setFont(new Font("Dialog",Font.BOLD, 15));
    go.setFont(new Font("Dialog",Font.BOLD, 20));
+   atras.setFont(new Font("Dialog",Font.BOLD, 20));
    correo_e.setFont(new Font("Dialog",Font.BOLD, 20));
    
    //Choice
@@ -112,7 +117,15 @@ public class Registro implements ActionListener, EventListener, KeyListener {
 	  
 	  System.out.println("Se oprimio ready :)");
 	  
-	  codigoT=user.getText();
+	 if(eve.getSource()==atras) {
+		 
+		 windP.dispose();
+		 
+	 }
+			 
+	 else if(eve.getSource()==go){
+		 codigoT=user.getText();
+	 
 	  correoT=mail.getText();
 	  correoT=correoT+correo_e.getSelectedItem();
 	  contraseniaT=pass.getText();
@@ -132,6 +145,7 @@ public class Registro implements ActionListener, EventListener, KeyListener {
 		  windP.dispose();
 		  
 	  }
+	 }
 	  
 	 
   }
@@ -152,15 +166,15 @@ public void keyTyped(KeyEvent e) {
 	   e.setKeyChar('\0');
 	   }
 	}
-	/* else if (e.getSource().equals(mail)) {
+	 else if (e.getSource().equals(mail)) {
 			
-		   if(!Character.isAlphabetic(e.getKeyChar()) && e.getKeyChar()!=KeyEvent.VK_BACK_SPACE && !Character.is(e.getKeyChar())  ){
+		   if(!Character.isAlphabetic(e.getKeyChar()) && e.getKeyChar()!=KeyEvent.VK_BACK_SPACE && !Character.isDigit(e.getKeyChar()) && e.getKeyChar()!='.'&& e.getKeyChar()!='_'&& e.getKeyChar()!='-'){
 			
-		  JOptionPane.showMessageDialog(null, "PORFAVOR, SOLO DIGITAR NUMEROS");
+		  JOptionPane.showMessageDialog(null, "SIN CARACTERES ESPECIALES (Solo se aceptab '.','-' y '_'");
 		 
 		   e.setKeyChar('\0');
 		   }
-		}*/
+		}
 
 		
  }
