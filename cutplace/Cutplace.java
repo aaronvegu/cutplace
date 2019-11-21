@@ -112,7 +112,7 @@ public class Cutplace  implements ActionListener {
 				  
 				  System.out.print(use.getNombre());
 				  
-				  JOptionPane.showMessageDialog(ingreso, "Si inicio sesion correctamente, Bienvenido",user, 3);
+				  JOptionPane.showMessageDialog(ingreso, "Se inicio sesion correctamente, Bienvenido",user, 3);
 				  
 				  //ingreso.dispose();
 				  
