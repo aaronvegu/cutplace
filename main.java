@@ -1,4 +1,4 @@
-package comicut2;
+package cutplace;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -6,16 +6,16 @@ import java.io.*;
 
 public class main implements ActionListener
 {
-	JFrame mainFrame,secondFrame;
+	JFrame mainFrame,secondFrame,thirdFrame;
 	JButton b[],b2,b3[],next,back,backahora;
 	JTextField ourField;
-	JPanel newLab,newLab2,image1,newLab3,menu,panup;
+	JPanel newLab,newLab2,image1,newLab3,menu,panup,desc,env;
 	String[] newString;
-	JLabel label,label2,label3,lab[],label4,label5;
+	JLabel label,label2,label3,lab[],label4,label5,label6[],label7[];
 	Image image;
 	ImageIcon taquitos,taquitos1;
 	String comida1,comida2;
-	JTextArea first;
+	JTextArea first,second[];
 
 
 
@@ -114,10 +114,14 @@ public class main implements ActionListener
 		back = new JButton("<");
 		back.setSize(28,60);
 		back.addActionListener(this);
+		back.setBorderPainted(false);
+		back.setBackground(new Color(185,209,99));
 		
 		next = new JButton(">");
 		next.setSize(28,60);
 		next.addActionListener(this);
+		next.setBorderPainted(false);
+		next.setBackground(new Color(185,209,99));
 		
 		lab = new JLabel[2];
 		label4 = new JLabel();
@@ -144,8 +148,31 @@ public class main implements ActionListener
 		panup.add(label4);
 		panup.add(menu);
 		
+		//Text that must be modified by database Qrys
+		desc = new JPanel();
+		desc.setLayout(new GridLayout(4,2));
+		desc.setBackground(new Color(204,222,145));
+		
+		String[] opciones = {"Nombre del vendedor : ","Descripcion del vendedor : ","Rango de precios : ","Ubicacion : "};
+		String[] descripcion = {"Taquitos don pepe","Vendemos tacos de canasta, sudados, de suadero, ven por tus tacos mañaneros","Los mas baratos 10$ la orden en 20$","Banquitas del B"};
+		label6 = new JLabel[4];
+		second = new JTextArea[4];
+		for(int i = 0; i < opciones.length;i++)
+		{
+			label6[i] = new JLabel(opciones[i]);
+			label6[i].setBackground(new Color(204,222,145));
+			second[i] = new JTextArea(descripcion[i]);
+			second[i].setBackground(new Color(204,222,145));
+			second[i].setEditable(false);
+			desc.add(label6[i]);
+			desc.add(second[i]);
+		}
+		
+		
 		backahora = new JButton("Atras");
 		backahora.addActionListener(this);
+		backahora.setBorderPainted(false);
+		backahora.setBackground(new Color(185,209,99));
 		
 		secondFrame = new JFrame("Customer View");
 		secondFrame.setVisible(false);
@@ -153,7 +180,19 @@ public class main implements ActionListener
 		secondFrame.setLayout(new BorderLayout());
 		secondFrame.add(panup,BorderLayout.NORTH);
 		secondFrame.add(backahora,BorderLayout.SOUTH);
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				
+		secondFrame.add(desc,BorderLayout.CENTER);
+		secondFrame.setBackground(new Color(204,222,145));
+		
+		// third frame
+		
+		env = new JPanel();
+		
+		label7 = new JLabel[4];
+		
+		thirdFrame = new JFrame("Change info");
+		thirdFrame.setVisible(false);
+		thirdFrame.setSize(480,720);
+		thirdFrame.setLayout(new BorderLayout());
 		
 	}
 	
